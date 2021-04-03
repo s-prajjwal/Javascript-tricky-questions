@@ -1,0 +1,8 @@
+.rating-star{
+    width: 50px;
+    background-color: blue;
+    height: 50px;
+}
+.rating-star:hover{
+    background-color: green;
+}
