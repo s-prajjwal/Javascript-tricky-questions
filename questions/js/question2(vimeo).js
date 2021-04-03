@@ -12,18 +12,20 @@ function findNumber(arr, start, end) {
     const mid = (start + end) / 2;
     // console.log("mid is - ", mid);
     if (arr[mid] === number) return mid;
-    if (arr[start] <= arr[mid]) {
-        if (number >= arr[start] && number <= arr[mid]) {
-            return findNumber(arr, start, mid - 1);
+    else {
+        if (arr[start] <= arr[mid]) {
+            if (number >= arr[start] && number <= arr[mid]) {
+                return findNumber(arr, start, mid);
+            }
         }
-    }
-    if (number >= arr[mid + 1] && number <= arr[end]) {
-        return findNumber(arr, mid + 1, end);
+        if (number >= arr[mid + 1] && number <= arr[end]) {
+            return findNumber(arr, mid + 1, end);
+        }
     }
     return findNumber(arr, start, mid - 1);
 }
 
 const arr = [13, 18, 25, 2, 8, 10] // 8
-const number = 2;
+const number = 8;
 const result = findNumber(arr, 0, arr.length);
 console.log(result);
